@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ColorView: View {
-    @Binding var red: Double
-    @Binding var green: Double
-    @Binding var blue: Double
+    let red: Double
+    let green: Double
+    let blue: Double
     
     private let screenWidth = UIScreen.main.bounds.size.width
     private let screenHeight = UIScreen.main.bounds.size.height
@@ -27,10 +27,6 @@ struct ColorView: View {
 
 struct ColorView_Previews: PreviewProvider {
     static var previews: some View {
-        ColorView(
-            red: .constant(0),
-            green: .constant(0),
-            blue: .constant(0)
-        )
+        ColorView(red: 0, green: 100, blue: 0)
     }
 }

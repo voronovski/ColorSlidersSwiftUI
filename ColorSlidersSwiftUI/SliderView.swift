@@ -15,10 +15,9 @@ struct SliderView: View {
         HStack(spacing: 10) {
             Text("\(lround(value))")
                 .foregroundColor(.white)
-                .frame(width: 35)
-                .multilineTextAlignment(.leading)
+                .frame(width: 35, alignment: .leading)
             Slider(value: $value, in: 0...255, step: 1)
-                .accentColor(color)
+                .tint(color)
 //            TextField("0", text: "\(lround($value))")
 //                .textFieldStyle(.roundedBorder)
 //                .frame(width: 50)
