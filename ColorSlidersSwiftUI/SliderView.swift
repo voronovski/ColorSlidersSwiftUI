@@ -18,10 +18,6 @@ struct SliderView: View {
                 .frame(width: 35, alignment: .leading)
             Slider(value: $value, in: 0...255, step: 1)
                 .tint(color)
-//            TextField("0", text: "\(lround($value))")
-//                .textFieldStyle(.roundedBorder)
-//                .frame(width: 50)
-//                .multilineTextAlignment(.trailing)
         }.padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
     }
 }
