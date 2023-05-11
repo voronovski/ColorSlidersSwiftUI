@@ -9,7 +9,9 @@ import SwiftUI
 
 struct SliderView: View {
     @Binding var value: Double
-    var color: Color
+    @State private var text = ""
+    
+    let color: Color
     
     var body: some View {
         HStack(spacing: 10) {
@@ -18,7 +20,15 @@ struct SliderView: View {
                 .frame(width: 35, alignment: .leading)
             Slider(value: $value, in: 0...255, step: 1)
                 .tint(color)
-        }.padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                .onChange(of: value) { newValue in
+                    text = newValue.formatted()
+                }
+            TextFieldView(text: $text, value: $value)
+        }
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+        .onAppear {
+            text = value.formatted()
+        }
     }
 }
 
